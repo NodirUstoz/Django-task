@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+
+    <h2>Salom, {{ username|title }}!</h2>
+
+    {% if is_admin %}
+        <p>Siz admin foydalanuvchisiz.</p>
+    {% else %}
+        <p>Siz oddiy foydalanuvchisiz.</p>
+    {% endif %}
+
+    <h3>Texnologiyalar ro'yxati ({{ tech_list|length }} ta):</h3>
+    <ul>
+        {% for tech in tech_list %}
+            <li>{{ tech }}</li>
+        {% empty %}
+            <li>Hech narsa topilmadi.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
